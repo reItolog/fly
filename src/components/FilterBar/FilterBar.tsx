@@ -1,5 +1,8 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { fromEvent } from 'rxjs';
+import { debounceTime, pluck, distinctUntilChanged } from 'rxjs/operators';
 
 // Store
 import { Actions } from '../../store/flights/actions';
@@ -16,6 +19,8 @@ import styles from './filter.module.scss';
 const FilterBar = memo(() => {
   const dispatch = useDispatch();
 
+  const refFlyKey = useRef<any>(null);
+
   const [sortBy, setSortBy] = useState<string>('');
   const [flyKey, setFlyKey] = useState<string>('');
 
@@ -26,12 +31,26 @@ const FilterBar = memo(() => {
     dispatch(Actions.sortBy(value));
   };
 
-  const handleFlyKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setFlyKey(value);
+  useEffect(() => {
+    if (refFlyKey) {
+      const keyInput$ = fromEvent(refFlyKey.current, 'keyup').pipe(
+        debounceTime(1000),
+        distinctUntilChanged(),
+        pluck('target', 'value'),
+      );
 
-    // dispatch(Actions.sortBy(value));
-  };
+      const innputEvent = keyInput$.subscribe((value) => {
+        const key = value as string;
+        setFlyKey(key);
+
+        dispatch(Actions.sortByKey(key));
+      });
+
+      return () => {
+        innputEvent.unsubscribe();
+      };
+    }
+  }, []);
 
   return (
     <div className={styles.filterBar}>
@@ -42,7 +61,7 @@ const FilterBar = memo(() => {
         items={filterData.sortBy}
       />
 
-      <TextField onChange={handleFlyKeyChange} value={flyKey} id='flyKey' label='fly key' />
+      <TextField ref={refFlyKey} value={flyKey} id='flyKey' label='fly key' />
     </div>
   );
 });

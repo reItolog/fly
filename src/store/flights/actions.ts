@@ -6,6 +6,7 @@ import { Legs, SortBy, Params } from '../../shared/interfaces/flights';
 export enum ActionTypes {
   SET_PARAMS = 'SET_PARAMS',
   SORT_BY = 'SORT_BY',
+  SORT_BY_KEY = 'SORT_BY_KEY',
 
   FETCH_FLIGHTS_REQUEST = 'FETCH_FLIGHTS_REQUEST',
   FETCH_FLIGHTS_SUCCESS = 'FETCH_FLIGHTS_SUCCESS',
@@ -22,6 +23,7 @@ export const Actions = {
   )<SearchPaylod, Legs[], Error, string>(),
   setParams: (payload: Params) => action(ActionTypes.SET_PARAMS, payload),
   sortBy: (payload: SortBy) => action(ActionTypes.SORT_BY, payload),
+  sortByKey: (payload: string) => action(ActionTypes.SORT_BY_KEY, payload),
 };
 
 export type FlightsActionType = ActionType<typeof Actions>;

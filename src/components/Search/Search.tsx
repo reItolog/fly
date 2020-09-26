@@ -56,6 +56,7 @@ const Search = memo(() => {
             id='destination'
             label='destination'
             variant='outlined'
+            required
           />
         </div>
         {/* DATE */}

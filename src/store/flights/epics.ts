@@ -1,14 +1,13 @@
 import { Epic, ofType } from 'redux-observable';
 import { of } from 'rxjs';
-import { getType } from 'typesafe-actions';
-import { catchError, mergeMap, map, mapTo } from 'rxjs/operators';
+import { catchError, mergeMap, map } from 'rxjs/operators';
 
 import { flightsService } from './service';
 import { Actions, ActionTypes } from './actions';
 
 const fetchFlightsEpic: Epic = (action$, state$) =>
   action$.pipe(
-    ofType(ActionTypes.FETCH_FLIGHTS_REQUEST, ActionTypes.SORT_BY),
+    ofType(ActionTypes.FETCH_FLIGHTS_REQUEST, ActionTypes.SORT_BY, ActionTypes.SORT_BY_KEY),
     mergeMap(() => {
       const params = state$.value.flights.params;
 
@@ -21,7 +20,4 @@ const fetchFlightsEpic: Epic = (action$, state$) =>
     catchError((error) => of(Actions.fetchFlightsAsync.failure(error.message))),
   );
 
-const sortByEpic: Epic = (action$, state$) =>
-  action$.pipe(ofType(Actions.sortBy), mapTo(getType(Actions.fetchFlightsAsync.request)));
-
-export const epics = [fetchFlightsEpic, sortByEpic];
+export const epics = [fetchFlightsEpic];

@@ -52,6 +52,16 @@ export function reducer(state = initialState, action: FlightsActionType): LegsSt
       });
     }
 
+    case ActionTypes.SORT_BY_KEY: {
+      return Object.assign({}, state, {
+        loading: true,
+        params: {
+          ...state.params,
+          selectedFlightKey: action.payload,
+        },
+      });
+    }
+
     default: {
       return state;
     }
