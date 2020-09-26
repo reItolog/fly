@@ -20,7 +20,7 @@ const Results = memo(() => {
       <section className={styles.flights}>
         <Search />
 
-        {loading && <Loader />}
+        {loading && !flights && <Loader />}
         {flights && <FlyResults />}
       </section>
     </main>
