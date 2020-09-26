@@ -1,0 +1,20 @@
+{
+  "sortBy": [
+    {
+      "value": "best",
+      "title": "best"
+    },
+    {
+      "value": "price",
+      "title": "price"
+    },
+    {
+      "value": "duration",
+      "title": "duration"
+    },
+    {
+      "value": "stops",
+      "title": "stops"
+    }
+  ]
+}
