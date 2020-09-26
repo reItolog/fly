@@ -1,9 +1,27 @@
+@import '../../shared//styles/mixins.scss';
+
 .flightsResults {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.searchResult {
+  @include phones() {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .flightsResultsList {
   width: 400px;
+  min-height: 600px;
+
+  @include phones() {
+    width: 95%;
+  }
+}
+
+.blur {
+  filter: blur(50px);
 }

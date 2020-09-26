@@ -19,6 +19,7 @@ import styles from './filter.module.scss';
 const FilterBar = memo(() => {
   const dispatch = useDispatch();
 
+  // TODO: typing
   const refFlyKey = useRef<any>(null);
 
   const [sortBy, setSortBy] = useState<string>('');
@@ -50,7 +51,7 @@ const FilterBar = memo(() => {
         innputEvent.unsubscribe();
       };
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.filterBar}>

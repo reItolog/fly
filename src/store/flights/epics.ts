@@ -7,13 +7,18 @@ import { Actions, ActionTypes } from './actions';
 
 const fetchFlightsEpic: Epic = (action$, state$) =>
   action$.pipe(
-    ofType(ActionTypes.FETCH_FLIGHTS_REQUEST, ActionTypes.SORT_BY, ActionTypes.SORT_BY_KEY),
+    ofType(
+      ActionTypes.FETCH_FLIGHTS_REQUEST,
+      ActionTypes.SORT_BY,
+      ActionTypes.SORT_BY_KEY,
+      ActionTypes.SET_PAGE,
+    ),
     mergeMap(() => {
       const params = state$.value.flights.params;
 
       return flightsService.fetchFlights(params).pipe(
-        map((flights) => {
-          return Actions.fetchFlightsAsync.success(flights);
+        map(({ legs, totalPages }) => {
+          return Actions.fetchFlightsAsync.success({ legs, totalPages });
         }),
       );
     }),

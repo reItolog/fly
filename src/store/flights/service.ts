@@ -18,7 +18,7 @@ class FlightsService {
           return [];
         }
 
-        return flightsResponse.legs;
+        return { totalPages: flightsResponse.totalPages, legs: flightsResponse.legs };
       }),
       catchError((error) => {
         return of(error);

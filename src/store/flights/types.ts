@@ -5,4 +5,5 @@ export interface LegsState {
   loading: boolean;
   error: Error | null | string;
   params: Params | null;
+  totalPages: string;
 }

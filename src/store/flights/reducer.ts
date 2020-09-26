@@ -6,6 +6,7 @@ const initialState: LegsState = {
   error: null,
   loading: false,
   legs: null,
+  totalPages: '0',
   params: {
     origin: '',
     destination: '',
@@ -30,7 +31,8 @@ export function reducer(state = initialState, action: FlightsActionType): LegsSt
     case getType(Actions.fetchFlightsAsync.success): {
       return {
         ...state,
-        legs: action.payload,
+        legs: action.payload.legs,
+        totalPages: action.payload.totalPages,
         loading: false,
       };
     }
@@ -58,6 +60,16 @@ export function reducer(state = initialState, action: FlightsActionType): LegsSt
         params: {
           ...state.params,
           selectedFlightKey: action.payload,
+        },
+      });
+    }
+
+    case ActionTypes.SET_PAGE: {
+      return Object.assign({}, state, {
+        loading: true,
+        params: {
+          ...state.params,
+          page: action.payload,
         },
       });
     }

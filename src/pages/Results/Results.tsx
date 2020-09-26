@@ -19,8 +19,9 @@ const Results = memo(() => {
     <main className='centred'>
       <section className={styles.flights}>
         <Search />
+
         {loading && <Loader />}
-        {flights && !loading && <FlyResults />}
+        {flights && <FlyResults />}
       </section>
     </main>
   );

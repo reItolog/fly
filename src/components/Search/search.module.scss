@@ -6,6 +6,9 @@
   align-items: center;
   flex-flow: column;
   margin: 5% 0;
+  @include phones() {
+    width: 100%;
+  }
 }
 
 .searchFormFields {
@@ -14,9 +17,9 @@
   @include laptop() {
     flex-direction: column;
   }
-}
-
-.searchFromTo {
+  @include phones() {
+    width: 90%;
+  }
 }
 
 .searchDate {
@@ -29,4 +32,8 @@
 .searchDate {
   display: flex;
   margin-bottom: 2%;
+
+  @include phones() {
+    flex-direction: column;
+  }
 }
