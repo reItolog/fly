@@ -1,0 +1,32 @@
+@import '../../shared/styles/mixins.scss';
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin: 5% 0;
+}
+
+.searchFormFields {
+  display: flex;
+
+  @include laptop() {
+    flex-direction: column;
+  }
+}
+
+.searchFromTo {
+}
+
+.searchDate {
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchPersons,
+.searchFromTo,
+.searchDate {
+  display: flex;
+  margin-bottom: 2%;
+}

@@ -3,7 +3,7 @@ import { of, Observable } from 'rxjs';
 import queryString from 'query-string';
 
 import config from '../../shared/config/config.json';
-import { SearchPaylod, Params } from '../../shared/interfaces/flights';
+import { Params } from '../../shared/interfaces/flights';
 import { catchError, map } from 'rxjs/operators';
 
 class FlightsService {
