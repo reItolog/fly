@@ -1,0 +1,22 @@
+.checkoutInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.airCode,
+.checkoutInfoDate,
+.checkoutInfoDate,
+.checkoutInfoDate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutInfoItem {
+  border-bottom: 2px solid grey;
+}
+
+.datetime {
+  display: flex;
+  flex-direction: column;
+}

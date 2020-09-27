@@ -2,10 +2,16 @@ import React, { memo, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+//  Material UI
+import Button from '@material-ui/core/Button';
+
 // Store
 import { getFlights } from '../../store/flights/selectors';
 
+import FlyCheckoutCard from '../../components/FlyCheckoutCard/FlyCheckoutCard';
 import { Legs } from '../../shared/interfaces/flights';
+
+import styles from './checkout.module.scss';
 
 const Checkout = memo(() => {
   const location = useLocation();
@@ -26,9 +32,12 @@ const Checkout = memo(() => {
   }, [flight]);
 
   return (
-    <div>
-      <h1>Checkout</h1>
-    </div>
+    <main className={`flex-centred ${styles.checkout}`}>
+      {flight && <FlyCheckoutCard itinerary={flight.itinerary} />}
+      <Button variant='outlined' color='primary'>
+        buy {flight?.cost.price} $
+      </Button>
+    </main>
   );
 });
 

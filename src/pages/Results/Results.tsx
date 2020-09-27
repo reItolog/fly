@@ -17,7 +17,7 @@ const Results = memo(() => {
 
   return (
     <main className='centred'>
-      <section className={styles.flights}>
+      <section className={`flex-centred ${styles.flights}`}>
         <Search />
 
         {loading && !flights && <Loader />}

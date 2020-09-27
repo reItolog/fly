@@ -55,6 +55,14 @@ export interface Itinerary {
   outFlights: Flights[];
   startDateTime: string;
   endDateTime: string;
+  destinationGeoname: {
+    City: string;
+    Name: string;
+  };
+  originGeoname: {
+    City: string;
+    Name: string;
+  };
 }
 
 export interface Legs {

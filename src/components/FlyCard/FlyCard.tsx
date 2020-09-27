@@ -19,7 +19,6 @@ const FlyCard: React.FC<Props> = memo(({ item, keyIndex }) => {
   const history = useHistory();
 
   const handlePress = () => {
-    console.log(keyIndex);
     history.push(`/checkout/?id=${keyIndex}`);
   };
 

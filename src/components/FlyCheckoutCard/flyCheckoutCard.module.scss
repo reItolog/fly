@@ -1,0 +1,28 @@
+.checkoutCard {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+.flyInfo {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid grey;
+  padding: 1%;
+}
+
+.origin,
+.destination {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkoutTitle {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
