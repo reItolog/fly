@@ -53,6 +53,8 @@ export interface Itinerary {
   outDuration: number;
   inFlights: Flights[];
   outFlights: Flights[];
+  startDateTime: string;
+  endDateTime: string;
 }
 
 export interface Legs {

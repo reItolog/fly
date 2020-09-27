@@ -8,7 +8,6 @@ import { getFlights, getFlightsLoading } from '../../store/flights/selectors';
 import FlyCard from '../FlyCard/FlyCard';
 import FlyPagination from '../../components/FlyPagination/FlyPagination';
 import FilterBar from '../FilterBar/FilterBar';
-import Loader from '../../shared/UI/Loader/Loader';
 
 import { Legs } from '../../shared/interfaces/flights';
 
@@ -36,7 +35,7 @@ const FlyResults = memo(() => {
           }
         >
           {flyResult?.map((item: Legs, index) => {
-            return <FlyCard key={index} item={item} />;
+            return <FlyCard key={index} item={item} keyIndex={index} />;
           })}
         </ul>
       </div>

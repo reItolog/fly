@@ -1,6 +1,14 @@
 .cardContainer {
-  background: #210d0d;
+  background: #0d1758;
   border-radius: 5px;
   box-shadow: -1px -1px 9px 0px #a68ba6;
   margin-bottom: 5%;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+
+.flyCardDate {
+  display: flex;
+  justify-content: space-between;
 }

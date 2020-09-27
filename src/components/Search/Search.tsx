@@ -17,6 +17,9 @@ import styles from './search.module.scss';
 const Search = memo(() => {
   const dispatch = useDispatch();
 
+  const defaultDate = '2020-12-12';
+  const leaveDateDefault = '2020-12-20';
+
   const [payload, setPayload] = useState<SearchPaylod>({
     destination: '',
     numberOfAdults: '1',
@@ -43,7 +46,6 @@ const Search = memo(() => {
     <form className={styles.searchForm} onSubmit={handleFormSubmit}>
       <div className={styles.searchFormFields}>
         <div className={styles.searchFromTo}>
-          {/* <TextField onChange={handleAirport1} id='standard-basic' required label='city' /> */}
           <TextField
             onChange={(e) => handleChanges('origin', e.target.value)}
             id='origin'
@@ -61,8 +63,19 @@ const Search = memo(() => {
         </div>
         {/* DATE */}
         <div className={styles.searchDate}>
-          <DatePicker handleDateChange={(e) => handleChanges('leaveDate', e.target.value)} />
-          <DatePicker handleDateChange={(e) => handleChanges('returnDate', e.target.value)} />
+          <DatePicker
+            label='leaveDate'
+            id='leaveDate'
+            required={true}
+            defaultValue={defaultDate}
+            handleDateChange={(e) => handleChanges('leaveDate', e.target.value)}
+          />
+          <DatePicker
+            id='returnDate'
+            label='returnDate'
+            defaultValue={leaveDateDefault}
+            handleDateChange={(e) => handleChanges('returnDate', e.target.value)}
+          />
         </div>
         {/* DATE END */}
 

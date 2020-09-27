@@ -5,12 +5,12 @@ import styles from './flyInfoCard.module.scss';
 import { Flights } from '../../../shared/interfaces/flights';
 
 interface Props {
-  flyItem: Flights[]
+  flyItem: Flights[];
 }
 
 const FlyInfoCard: React.FC<Props> = ({ flyItem }) => {
   return (
-    <ul>
+    <ul className={styles.flyCardInfo}>
       {flyItem.map((item) => {
         return (
           <li key={item.flightNumber}>
