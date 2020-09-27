@@ -8,6 +8,7 @@ export enum ActionTypes {
   SORT_BY = 'SORT_BY',
   SORT_BY_KEY = 'SORT_BY_KEY',
   SET_PAGE = 'SET_PAGE',
+  FILTER = 'FILTER',
 
   FETCH_FLIGHTS_REQUEST = 'FETCH_FLIGHTS_REQUEST',
   FETCH_FLIGHTS_SUCCESS = 'FETCH_FLIGHTS_SUCCESS',
@@ -31,6 +32,7 @@ export const Actions = {
   sortBy: (payload: SortBy) => action(ActionTypes.SORT_BY, payload),
   sortByKey: (payload: string) => action(ActionTypes.SORT_BY_KEY, payload),
   sortPage: (payload: string) => action(ActionTypes.SET_PAGE, payload),
+  filter: (payload: string) => action(ActionTypes.FILTER, payload),
 };
 
 export type FlightsActionType = ActionType<typeof Actions>;

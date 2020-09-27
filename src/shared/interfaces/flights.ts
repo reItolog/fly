@@ -2,7 +2,7 @@ export type SortBy = 'best' | 'price' | 'duration' | 'stops';
 
 export interface Filter {
   filterStops?: number[];
-  filterAirlines?: string;
+  filterAirlines?: string[];
 }
 
 export interface Params {

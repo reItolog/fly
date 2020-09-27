@@ -27,10 +27,6 @@ const Checkout = memo(() => {
     }
   }, [flights, id]);
 
-  useEffect(() => {
-    console.log(flight);
-  }, [flight]);
-
   return (
     <main className={`flex-centred ${styles.checkout}`}>
       {flight && <FlyCheckoutCard itinerary={flight.itinerary} />}

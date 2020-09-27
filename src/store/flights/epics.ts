@@ -12,6 +12,7 @@ const fetchFlightsEpic: Epic = (action$, state$) =>
       ActionTypes.SORT_BY,
       ActionTypes.SORT_BY_KEY,
       ActionTypes.SET_PAGE,
+      ActionTypes.FILTER,
     ),
     mergeMap(() => {
       const params = state$.value.flights.params;

@@ -74,6 +74,16 @@ export function reducer(state = initialState, action: FlightsActionType): LegsSt
       });
     }
 
+    case ActionTypes.FILTER: {
+      return Object.assign({}, state, {
+        loading: true,
+        params: {
+          ...state.params,
+          filter: action.payload,
+        },
+      });
+    }
+
     default: {
       return state;
     }

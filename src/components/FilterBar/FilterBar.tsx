@@ -11,6 +11,7 @@ import { Actions } from '../../store/flights/actions';
 import TextField from '@material-ui/core/TextField';
 
 import filterData from '../../shared/data/filterData.json';
+import FlyFilter from './FlyFilter/FlyFilter';
 import FlySelect from '../FlySelect/FlySelect';
 import { SortBy } from '../../shared/interfaces/flights';
 
@@ -63,6 +64,8 @@ const FilterBar = memo(() => {
       />
 
       <TextField ref={refFlyKey} value={flyKey} id='flyKey' label='fly key' />
+
+      <FlyFilter />
     </div>
   );
 });
