@@ -43,7 +43,6 @@ const FilterBar = memo(() => {
 
       const innputEvent = keyInput$.subscribe((value) => {
         const key = value as string;
-        setFlyKey(key);
 
         dispatch(Actions.sortByKey(key));
       });
@@ -63,7 +62,13 @@ const FilterBar = memo(() => {
         items={filterData.sortBy}
       />
 
-      <TextField ref={refFlyKey} value={flyKey} id='flyKey' label='fly key' />
+      <TextField
+        ref={refFlyKey}
+        onChange={(e) => setFlyKey(e.target.value)}
+        value={flyKey}
+        id='flyKey'
+        label='fly key'
+      />
 
       <FlyFilter />
     </div>
