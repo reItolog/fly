@@ -8,7 +8,6 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/pickers": "^3.2.10",
-    "axios": "^0.20.0",
     "date-fns": "^2.0.0-beta.5",
     "query-string": "^6.13.2",
     "react": "^16.13.1",
