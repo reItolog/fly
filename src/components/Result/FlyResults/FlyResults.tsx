@@ -3,13 +3,13 @@ import React, { memo, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 // Store
-import { getFlights, getFlightsLoading } from '../../store/flights/selectors';
+import { getFlights, getFlightsLoading } from '../../../store/flights/selectors';
 
 import FlyCard from '../FlyCard/FlyCard';
-import FlyPagination from '../../components/FlyPagination/FlyPagination';
+import FlyPagination from '../FlyPagination/FlyPagination';
 import FilterBar from '../FilterBar/FilterBar';
 
-import { Legs } from '../../shared/interfaces/flights';
+import { Legs } from '../../../shared/interfaces/flights';
 
 import styles from './flyResults.module.scss';
 

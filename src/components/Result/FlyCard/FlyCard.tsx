@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button';
 
-import { Legs } from '../../shared/interfaces/flights';
+import { Legs } from '../../../shared/interfaces/flights';
 
 import FlyInfoCard from './FlyInfoCard/FlyInfoCard';
-import parseFlightDate from '../../shared/utils/parseFligthDate';
+import parseFlightDate from '../../../shared/utils/parseFligthDate';
 
 import styles from './flyCard.module.scss';
 

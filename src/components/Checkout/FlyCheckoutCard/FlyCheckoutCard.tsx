@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 // Materila UI
 import Paper from '@material-ui/core/Paper';
 
-import { Itinerary } from '../../shared/interfaces/flights';
+import { Itinerary } from '../../../shared/interfaces/flights';
 import FlyCheckoutInfo from './FlyCheckoutInfo/FlyCheckoutInfo';
 
 import styles from './flyCheckoutCard.module.scss';

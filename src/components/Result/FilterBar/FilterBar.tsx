@@ -5,15 +5,15 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, pluck, distinctUntilChanged } from 'rxjs/operators';
 
 // Store
-import { Actions } from '../../store/flights/actions';
+import { Actions } from '../../../store/flights/actions';
 
 // MAterial UI
 import TextField from '@material-ui/core/TextField';
 
-import filterData from '../../shared/data/filterData.json';
+import filterData from '../../../shared/data/filterData.json';
 import FlyFilter from './FlyFilter/FlyFilter';
-import FlySelect from '../FlySelect/FlySelect';
-import { SortBy } from '../../shared/interfaces/flights';
+import FlySelect from '../../../shared/components/FlySelect/FlySelect';
+import { SortBy } from '../../../shared/interfaces/flights';
 
 import styles from './filter.module.scss';
 

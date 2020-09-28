@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import { Flights } from '../../../shared/interfaces/flights';
-import parseFligthDate from '../../../shared/utils/parseFligthDate';
+import { Flights } from '../../../../shared/interfaces/flights';
+import parseFligthDate from '../../../../shared/utils/parseFligthDate';
 
 import styles from './flyCheckoutInfo.module.scss';
 

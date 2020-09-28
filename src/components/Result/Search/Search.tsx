@@ -2,15 +2,15 @@ import React, { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 // Store
-import { Actions } from '../../store/flights/actions';
+import { Actions } from '../../../store/flights/actions';
 
 // Material UI
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import DatePicker from '../DatePicker/DatePicker';
+import DatePicker from '../../../shared/components/DatePicker/DatePicker';
 
-import { SearchPaylod } from '../../shared/interfaces/flights';
+import { SearchPaylod } from '../../../shared/interfaces/flights';
 
 import styles from './search.module.scss';
 

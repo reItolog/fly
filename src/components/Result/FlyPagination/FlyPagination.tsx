@@ -4,8 +4,8 @@ import Pagination from '@material-ui/lab/Pagination';
 import { useSelector, useDispatch } from 'react-redux';
 
 //  Store
-import { getTotalPages } from '../../store/flights/selectors';
-import { Actions } from '../../store/flights/actions';
+import { getTotalPages } from '../../../store/flights/selectors';
+import { Actions } from '../../../store/flights/actions';
 
 const useStyles = makeStyles((theme) =>
   createStyles({

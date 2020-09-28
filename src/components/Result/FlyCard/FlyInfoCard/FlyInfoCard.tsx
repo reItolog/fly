@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './flyInfoCard.module.scss';
 
-import { Flights } from '../../../shared/interfaces/flights';
+import { Flights } from '../../../../shared/interfaces/flights';
 
 interface Props {
   flyItem: Flights[];

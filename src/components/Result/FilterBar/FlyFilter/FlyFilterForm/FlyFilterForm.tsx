@@ -7,9 +7,9 @@ import Slider from '@material-ui/core/Slider';
 import Button from '@material-ui/core/Button';
 
 // Store
-import { Actions } from '../../../../store/flights/actions';
+import { Actions } from '../../../../../store/flights/actions';
 
-import { Filter } from '../../../../shared/interfaces/flights';
+import { Filter } from '../../../../../shared/interfaces/flights';
 
 import styles from './flyFilterForm.module.scss';
 

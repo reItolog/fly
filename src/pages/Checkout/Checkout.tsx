@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 // Store
 import { getFlights } from '../../store/flights/selectors';
 
-import FlyCheckoutCard from '../../components/FlyCheckoutCard/FlyCheckoutCard';
+import FlyCheckoutCard from '../../components/Checkout/FlyCheckoutCard/FlyCheckoutCard';
 import { Legs } from '../../shared/interfaces/flights';
 
 import styles from './checkout.module.scss';

@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 //  Store
 import { getFlights, getFlightsLoading } from '../../store/flights/selectors';
 
-import Search from '../../components/Search/Search';
-import FlyResults from '../../components/FlyResults/FlyResults';
+import Search from '../../components/Result/Search/Search';
+import FlyResults from '../../components/Result/FlyResults/FlyResults';
 import Loader from '../../shared/UI/Loader/Loader';
 
 import styles from './results.module.scss';
