@@ -30,7 +30,7 @@ export interface SearchPaylod {
 export interface Flights {
   originAirportFullName: string;
   originAirportCode: string;
-  destinationAirportFullName: symbol;
+  destinationAirportFullName: string;
   destinationAirportCode: string;
   carrierFullName: string;
   carrierCode: string;
